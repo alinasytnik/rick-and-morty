@@ -1,0 +1,24 @@
+name: Deploy Site on Fleek.xyz
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-to-fleek:
+    environment: production
+    runs-on: ubuntu-latest
+  
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Fleek CLI
+        run: npm i -g @fleekxyz/cli
+
+      - name: Install dependencies
+        run: npm install
+        
+      - name: Deploy site via Fleek CLI
+        run: fleek sites deploy
