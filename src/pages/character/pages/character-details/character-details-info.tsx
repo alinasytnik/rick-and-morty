@@ -44,7 +44,7 @@ export const CharacterDetailsInfo: VFC<CharacterDetailsInfoProps> = ({ character
         )}
         {gender && (
           <Text>
-            Genderr: <b>{gender}</b>
+            Gender: <b>{gender}</b>
           </Text>
         )}
 
